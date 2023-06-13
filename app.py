@@ -35,9 +35,9 @@ def handle_upload():
 
         prediction = model.predict(sc.transform(data.to_numpy()))
         if prediction[0] == 0:
-            output = "You are predicted to have PCOS."
-        elif prediction[0] == 1:
             output = "You are predicted not to have PCOS."
+        elif prediction[0] == 1:
+            output = "You are predicted to have PCOS."
             
         return output
     except:
